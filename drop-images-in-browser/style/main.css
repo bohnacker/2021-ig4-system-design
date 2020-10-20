@@ -1,0 +1,12 @@
+
+body {
+	margin: 30px;
+	background-color: #fff;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+	font-size: 16px;
+	line-height: 16px;
+	overscroll-behavior: none;
+}
+
+
