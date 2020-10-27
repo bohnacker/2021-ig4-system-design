@@ -2,6 +2,7 @@
 window.addEventListener("dragover", dragOverHandler);
 window.addEventListener("drop", dropHandler);
 
+let svgString;
 
 function dragOverHandler(ev) {
   // Prevent default behavior (Prevent file from being opened)
@@ -55,6 +56,9 @@ function dropHandler(ev) {
       if (file.name.endsWith('.svg')) {
         $('#image-container').append(reader.result);
         
+        svgString = reader.result;
+        doSomethingWithSvgString(svgString);
+
       } else {
         let img = document.createElement('img');
         img.src = reader.result;
@@ -73,3 +77,15 @@ function dropHandler(ev) {
     }
   }
 }
+
+
+function doSomethingWithSvgString(svgString) {
+  let it = svgString.matchAll(/fill:(.+);/g);
+  let array = [...it];
+
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+
+}
+
