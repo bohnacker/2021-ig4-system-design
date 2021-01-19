@@ -1,0 +1,1 @@
+# Exploring the communication between a browser addon popup and tab content
